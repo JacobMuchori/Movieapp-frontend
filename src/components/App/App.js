@@ -5,10 +5,12 @@ import Dashboard from '../Movies/Dashboard';
 import Registerpage from '../Movies/Registerpage';
 import { Routes, Route } from 'react-router-dom';
 
+
+
 function App() {
 
     return (
-        <div className="App">
+      <div className="overlay">
       <Routes>
         <Route exact path="/" element={<Homepage/>}></Route>
         <Route exact path="/dashboard" element={<Dashboard/>}></Route>

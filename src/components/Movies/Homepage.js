@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 function Homepage() {
 
     return(
-        <div className="homenav">
+        <div className="homenav"  >
             <nav className="top">
-                <Link to="/dashboard">Dashboard</Link>
                 <Link to="/registerpage">Sign Up</Link>
                 <Link to="/login">Login</Link>
             </nav>
