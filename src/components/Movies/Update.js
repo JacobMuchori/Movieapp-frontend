@@ -1,8 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-function Addmovie() {
+function Update() {
+
+    const params = useParams();
+    // console.log(params.id);
+
 
 const navigate = useNavigate()
 const [mov_title, SetMov_title] = useState("")
@@ -10,11 +15,11 @@ const [mov_year, SetMov_year] = useState("")
 const [mov_desc, SetMov_desc] = useState("")
 const [mov_url, SetMov_url] = useState("")
 
-function handleAdd(e) {
+function handleUpdate(e) {
     e.preventDefault()
 
-fetch('http://127.0.0.1:9292/create', {
-method: 'POST',
+fetch(`http://127.0.0.1:9292/movies/update/${params.id}`, {
+method: 'PUT',
 body: JSON.stringify({
     title: mov_title,
     year: mov_year,
@@ -31,7 +36,7 @@ body: JSON.stringify({
 }
 
 return(
-    <form className="addmov" onSubmit={e => handleAdd(e)}>
+    <form className="addmov" onSubmit={e => handleUpdate(e)}>
     <label><b>title</b></label>
     <input type="text" placeholder="Enter title" value={mov_title} onChange={e => SetMov_title(e.target.value)} required></input>
     <label><b>Year</b></label>
@@ -45,4 +50,4 @@ return(
 )
 }
 
-export default Addmovie;
+export default Update;

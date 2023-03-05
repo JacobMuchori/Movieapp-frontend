@@ -1,21 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Search from "./Search";
+import Allmovies from "./Allmovies";
+
 
 function Dashboard() {
 
-    const [movies, setMovies] = useState("")
+    const navigate = useNavigate()
+    const [movies, setMovies] = useState([])
 
-    fetch()
+  function handleDeleteMovie(id) {
+    const updatedMovies = movies.filter((movie) => movie.id !== id);
+    setMovies(updatedMovies);
+  }
+
+    useEffect(() => {
+    fetch("http://127.0.0.1:9292/movies")
     .then((response) => response.json())
     .then((data) => setMovies(data))
+    }, [])
+
+    function handleSearch(query) {
+    fetch (`http://127.0.0.1:9292/search?query=${query}`) 
+    .then((response) => response.json())
+    .then((results) => {
+      setMovies(results)
+      navigate("/dashboard")
+    })
+    }
+
+    
+
     return(
         <div>
-            {movies.map((movie) => 
-                <div key={movie.id} className="card">
-                    <h1>{movie.title}</h1>
-                    <p>{movie.description}</p>
-                    <h2>{movie.year}</h2>
-                </div>
-            )}
+        <nav className="dashnav">
+            <Link to="/addmovie">Add Movie</Link>
+            <Search onSearch={handleSearch}/>
+        </nav>
+          <Allmovies movies={movies} handleDeleteMovie={handleDeleteMovie}/>
         </div>
     )
 }
