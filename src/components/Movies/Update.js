@@ -18,7 +18,7 @@ const [mov_url, SetMov_url] = useState("")
 function handleUpdate(e) {
     e.preventDefault()
 
-fetch(`http://127.0.0.1:9292/movies/update/${params.id}`, {
+fetch(`https://move-7msy.onrender.com/movies/update/${params.id}`, {
 method: 'PUT',
 body: JSON.stringify({
     title: mov_title,

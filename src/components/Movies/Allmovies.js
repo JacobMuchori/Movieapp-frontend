@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Allmovies({ movies, handleDeleteMovie }) {
 
     function handleDelete(id) {
-        fetch(`http://127.0.0.1:9292/movies/destroy/${id}`, { 
+        fetch(`https://move-7msy.onrender.com/movies/destroy/${id}`, { 
             method: "DELETE",
         })
 
