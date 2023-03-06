@@ -29,12 +29,11 @@ function Dashboard() {
     })
     }
 
-    
-
     return(
         <div className="dash">
         <nav className="dashnav">
             <Link to="/addmovie">Add Movie</Link>
+            <Link to="/">Back to Homepage</Link>
             <Search onSearch={handleSearch}/>
         </nav>
           <Allmovies movies={movies} handleDeleteMovie={handleDeleteMovie}/>
