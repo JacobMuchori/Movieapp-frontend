@@ -20,7 +20,7 @@ function Allmovies({ movies, handleDeleteMovie }) {
                     <img className="card-img-top" src={movie.movie_url} alt={movie.movie_url}></img>
                     <h2>{movie.year}</h2>
                     {movie.originally_fetched === false && (
-                        <button onClick={() => handleDelete(movie.id)}>Delete</button>
+                        <button className="cdbtn" onClick={() => handleDelete(movie.id)}>Delete</button>
                     )}
                     {movie.originally_fetched === false && (
                         <Link to={`/update/${movie.id}`}>Update</Link>

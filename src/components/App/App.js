@@ -11,15 +11,6 @@ import { Routes, Route } from 'react-router-dom';
 
 
 function App() {
-
-  
-  // function handleAddMovie(newMovie) {
-  //   setMovies([...movies, newMovie]);
-  // }
-
-  // const displayedMovies = movies.filter((movie) =>
-  //   movie.body.toLowerCase().includes(search.toLowerCase())
-  // );
   
     return (
       <div className="overlay">

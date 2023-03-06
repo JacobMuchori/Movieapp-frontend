@@ -32,7 +32,7 @@ function Dashboard() {
     
 
     return(
-        <div>
+        <div className="dash">
         <nav className="dashnav">
             <Link to="/addmovie">Add Movie</Link>
             <Search onSearch={handleSearch}/>

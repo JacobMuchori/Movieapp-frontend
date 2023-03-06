@@ -11,9 +11,9 @@ function Search({ onSearch }) {
   }
 
   return (
-    <nav>
+    <nav className="search">
       <input value={query} onChange={ e => setQuery(e.target.value)}></input>
-      <button type="submit" onClick={e => handleQuery(e)}>Search</button>
+      <button className="schbtn" type="submit" onClick={e => handleQuery(e)}>Search</button>
     </nav>
   );
 }
