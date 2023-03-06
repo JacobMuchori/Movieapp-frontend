@@ -32,7 +32,7 @@ body: JSON.stringify({
 
 return(
     <form className="addmov" onSubmit={e => handleAdd(e)}>
-    <label><b>title</b></label>
+    <label><b>Title</b></label>
     <input type="text" placeholder="Enter title" value={mov_title} onChange={e => SetMov_title(e.target.value)} required></input>
     <label><b>Year</b></label>
     <input type="text" placeholder="Enter year" value={mov_year} onChange={e => SetMov_year(e.target.value)} required></input>
